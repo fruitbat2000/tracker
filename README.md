@@ -1,0 +1,1 @@
+A proof-of-concept tracking app using node.js, socket.io, Backbone, RequireJS and the Google maps API.
