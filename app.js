@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-var port = 3000;
+var port = process.env.PORT;
 
 app.get('/', function(req, res){
 	res.sendfile('index.html');
@@ -8,7 +8,7 @@ app.get('/', function(req, res){
 
 app.use(express.static(__dirname + '/assets'));
 
-var io = require('socket.io').listen(app.listen(port));
+var io = require('socket.io').listen(app.listen(port || 8080));
 console.log('listening on port ' + port);
 
 io.sockets.on('connection', function(socket){
